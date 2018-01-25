@@ -1,5 +1,10 @@
 package model.shop.command;
 
+import model.shop.Warenkorb;
+import model.user.Benutzer;
+import model.user.BookShopPersitenceException;
+import model.user.DBFacade;
+
 public class LoginCommand extends Command
 {
    public LoginCommand(String name, String view, String... cmds)
@@ -10,11 +15,30 @@ public class LoginCommand extends Command
    @Override
    public void execute(CommandContext ctxt)
    {
-      // Wenn login geklappt hat, wird später der Benuter
-      // in die Session gelegt
-      if( ctxt.getAttribute("benutzer") == null )
-      {  
-          ctxt.setAttribute("benutzer", new Boolean(true) );
+      try
+      {
+         String userid = (String) ctxt.getAttribute("user");
+         String passwd = (String) ctxt.getAttribute("passwd");
+
+         boolean loginOK = DBFacade.getInstance().checkLogin(userid, passwd);
+
+         if (loginOK)
+         {
+            Benutzer benutzer = DBFacade.getInstance().findBenutzer(userid);
+            Warenkorb wk = (Warenkorb) ctxt.getAttribute("warenkorb");
+            ctxt.setAttribute("benutzer", benutzer);
+
+            ctxt.setAttribute("warenkorb", wk);
+         }
+         else
+         {
+            ctxt.setError( new Exception("Logindaten sind falsch") );
+            ctxt.setAttribute("error", new BookShopPersitenceException("Logindaten sind falsch"));
+         }
+      }
+      catch (BookShopPersitenceException e)
+      {
+         ctxt.setError(e);
       }
    }
 

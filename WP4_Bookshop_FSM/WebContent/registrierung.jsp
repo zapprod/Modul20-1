@@ -10,22 +10,24 @@
 <script type="application/javascript" src="js/passwordValidator.js"></script>
 <script type="application/javascript" src="js/autocompletion.js"></script>
 <script type="application/javascript" src="js/initScriptOnRegistration.js"></script>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <title>Büchersuche</title>
 </head>
 <body>
 <div id="Content">
+<div class="error"> ${error.message} </div>
 <h2>Wir begrüßen Sie als Neukunden</h2>
 
 <form action="controller">
  <table>
   <tr>
-    <td>Nachname:</td> <td><input type="text" name="nachname" size="30" /></td> 
+    <td>Nachname:</td> <td><input type="text" name="nachname" size="30" value="${benutzer.name}"/></td> 
   </tr>
   <tr>
-    <td>Vorname:</td> <td><input type="text" name="vorname" size="30"/></td> 
+    <td>Vorname:</td> <td><input type="text" name="vorname" size="30" value="${benutzer.vorname}"/></td> 
   </tr>
   <tr>
-    <td>Email:</td> <td><input id="email" type="text" name="email" size="30"/></td> 
+    <td>Email:</td> <td><input id="email" type="text" name="email" size="30" value="${benutzer.email}"/></td> 
   </tr>
    <tr>
     <td>PLZ:</td> <td><input id="plz" type="text" name="plz" size="30" autocomplete="off"/></td> 

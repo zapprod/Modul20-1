@@ -57,7 +57,6 @@ public class CommandContext
       return this.error;
    }
    
-   
    public void resetError()
    {
       this.error = false;

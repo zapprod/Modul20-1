@@ -30,3 +30,10 @@ label {  display: block; width: 100px; }
   width: 500px;
   font-size: 120%;
 }
+
+.error{
+  font-size: 130%;
+  color: #FF0000;
+  background-color: #F2F9F8;
+  text-align: center;
+}

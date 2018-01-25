@@ -147,7 +147,7 @@ public class CentralServlet extends HttpServlet
          request.setAttribute("error", ctxt.getError() );
       }
       
-      // Wenn sich ein benutzer angemeldet hat, wird er in die Session gelegt
+      // Wenn sich ein Benutzer angemeldet hat, wird er in die Session gelegt
       if( ctxt.getAttribute("benutzer") != null )
       {
          request.getSession().setAttribute("benutzer",  ctxt.getAttribute("benutzer"));

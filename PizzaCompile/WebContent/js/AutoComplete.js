@@ -31,4 +31,4 @@ function cityCompletion(event)
 function clearCity()
 { 
   document.getElementById("inputCity").value = "";
-}
+} 
