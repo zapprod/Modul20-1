@@ -16,9 +16,13 @@
 				height="60" class="" alt="Home"><span></span>
 			</a>
 		</nav>
-		<a href="./cart.html" id="shoppingCartLink"><img
+		<form action="controller" method="get">
+		<input type="hidden" name="command" value="shoppingcart" />
+		<input type="image" class="scbutton" src="./img/ShoppingCart.png" alt="Submit" height="40"/>
+		<!--<a href="./cart.html" id="shoppingCartLink"><img
 			src="../img/ShoppingCart.png" height="40" alt="Mein Warenkorb"
-			title="Mein Warenkorb"></a>
+			title="Mein Warenkorb"></a>-->
+		</form>	
 		<div class="jumbotron">
 			<h1>Konfigurator</h1>
 		</div>
