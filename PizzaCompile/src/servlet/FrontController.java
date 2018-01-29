@@ -14,7 +14,6 @@ import model.shop.ShoppingCart;
 import model.shop.command.CmdBroker;
 import model.shop.command.CmdContext;
 import model.shop.command.Command;
-import model.shop.command.CommandContext;
 
 @WebServlet("/controller")
 public class FrontController extends HttpServlet {
@@ -44,7 +43,7 @@ public class FrontController extends HttpServlet {
 	         session.setAttribute("shoppingcart", sc);
 	      }
 	      
-	      // Der Warenkorb steht jeder JSP auch zur Verfügung
+	      // Der Warenkorb steht jeder JSP auch zur Verfï¿½gung
 	      request.setAttribute("shoppingcart", sc);
 
 	      String commandName = request.getParameter("command");
@@ -53,25 +52,25 @@ public class FrontController extends HttpServlet {
 	      if (commandName == null)
 	      {
 	         Command command = this.broker.lookupCommand("start");
-	         // In der Session wird das ausgeführte Command hinterlegt
+	         // In der Session wird das ausgefï¿½hrte Command hinterlegt
 	         session.setAttribute("__command", command);
 	         getServletContext().getRequestDispatcher(command.getView()).forward(request, response);
 	         return;
 	      }
 	      
-	      // Das zuletzt ausgeführte Command wird ermittelt
+	      // Das zuletzt ausgefï¿½hrte Command wird ermittelt
 	      Command previous = (Command) session.getAttribute("__command");
 	      Command command = broker.lookupCommand(commandName);
 
 	      // Alle Informationen werden in ein Context-Objekt kopiert
-	      CommandContext ctxt = this.createContext(request);
+	      CmdContext ctxt = this.createContext(request);
 	      ctxt.setShoppingCart(sc);
 	      
 	      
-	      // Prüfe, ob der Übergang erlaubt ist
+	      // Prï¿½fe, ob der ï¿½bergang erlaubt ist
 	      if (previous != null && previous.isAllowedSuccessor(command.getName()) == false)
 	      {
-	         // Kein erlaubter Übergang!!
+	         // Kein erlaubter ï¿½bergang!!
 	         // Man bleibt auf der Seite, es wird nichts gemacht
 	         this.copyContextIntoRequest(ctxt, request);
 	         getServletContext().getRequestDispatcher(previous.getView()).forward(request, response);
@@ -104,20 +103,56 @@ public class FrontController extends HttpServlet {
 	   {
 	      CmdContext ctxt = new CmdContext();
 
-	      // Übertrage Request-Parameter in den CmdContext
+	      // ï¿½bertrage Request-Parameter in den CmdContext
 	      Map<String, String[]> paramMap = request.getParameterMap();
 	      for (String key : paramMap.keySet())
 	      {
 	         String[] values = paramMap.get(key);
 	         // TODO: Es werden in dieser Version nur einwertige
-	         // Parameter unterstützt
-	         // Hier müsste man ggf. die Unterstützung für "mehrwertige Paramter"
-	         // ergänzen!
+	         // Parameter unterstï¿½tzt
+	         // Hier mï¿½sste man ggf. die Unterstï¿½tzung fï¿½r "mehrwertige Paramter"
+	         // ergï¿½nzen!
 	         if (values.length == 1)
 	         {
 	            ctxt.setAttribute(key, values[0]);
 	         }
 	      }
-
+	   // Gibt es einen Benutzer in der Session, wird dieser in den Context
+	      // gelegt
+	      Object  user = request.getSession().getAttribute("user");
+	      if( user != null )
+	      {
+	         ctxt.setAttribute("user", user);
+	      }
+	      
+	      return ctxt;
 	   }
-}
+
+	   private void copyContextIntoRequest(CmdContext ctxt, HttpServletRequest request)
+	   {
+	      // Ãœbertrage CommandContext in Request-Parameter
+	      for (String key : ctxt.getAttributeNames())
+	      {
+	         Object value = ctxt.getAttribute(key);
+	         request.setAttribute(key, value);
+	      }
+	      
+	      request.setAttribute("shoppingcart", ctxt.getShoppingCart() );
+	      
+	      if( ctxt.hasError() )
+	      {
+	         request.setAttribute("error", ctxt.getError() );
+	      }
+	      
+	      // Wenn sich ein Benutzer angemeldet hat, wird er in die Session gelegt
+	      if( ctxt.getAttribute("user") != null )
+	      {
+	         request.getSession().setAttribute("user",  ctxt.getAttribute("user"));
+	      }
+	      
+	      return;
+	   }
+
+
+  }
+

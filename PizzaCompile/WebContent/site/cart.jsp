@@ -3,40 +3,42 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css?family=VT323"
+	rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
 
 <title>PizzaCompiler - Warenkorb</title>
 </head>
 <body>
 	<div id="containerContent">
 		<nav>
-			<a class="" href="../index.html"> <img
-				src="../img/logo2.png" height="60" class="" alt="Home"><span></span>
+			<a class="" href="./index.jsp"> <img src="./img/logo2.png"
+				height="60" class="" alt="Home"><span></span>
 			</a>
 		</nav>
 		<div class="jumbotron">
 			<h1>Mein Warenkorb</h1>
 		</div>
 		<div class="content">
-			<table id="cartTable">
-				<tbody>
-					<tr>
-						<td>Autoren</td>
-						<td>Buchtitel</td>
-					</tr>
-					<tr>
-						<td>Autoren</td>
-						<td>Buchtitel</td>
-					</tr>
-					<tr>
-						<td>Autoren</td>
-						<td>Buchtitel</td>
-					</tr>
-				</tbody>
-			</table>
-			<a href="../index.html" id="backLink">Weiter einkaufen</a> <a
-				href="./login.html" id="buyLink">Kaufen</a>
+			<form action="controller" method="post">
+				<table id="cartTable">
+					<tbody>
+						<c:forEach items="${warenkorb.inhalt}" var="b">
+							<tr>
+								<td>${b.autorenAsString}</td>
+								<td>${b.titel}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+				<input type="hidden" name="command" value="login"> <input
+					type="submit" class="primaryButton" value="Kaufen" />
+			</form>
+			<!-- <a href="../index.html" id="backLink">Weiter einkaufen</a>-->
+			<form action="controller" method="get">
+				<input type="hidden" name="command" value="configurator"> <input
+					type="submit" class="primaryButton" value="Weiter einkaufen">
+			</form>
 		</div>
 	</div>
 </body>

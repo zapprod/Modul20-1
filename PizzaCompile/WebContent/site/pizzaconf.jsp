@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=VT323"
 	rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="./css/style.css">
 
 <title>PizzaCompiler - Konfigurator</title>
 </head>
 <body>
 	<div id="containerContent">
 		<nav>
-			<a class="" href="../index.html"> <img src="../img/logo2.png"
+			<a class="" href="./index.jsp"> <img src="./img/logo2.png"
 				height="60" class="" alt="Home"><span></span>
 			</a>
 		</nav>
 		<form action="controller" method="get">
 		<input type="hidden" name="command" value="shoppingcart" />
-		<input type="image" class="scbutton" src="./img/ShoppingCart.png" alt="Submit" height="40"/>
+		<input type="image" class="cartButton" src="./img/ShoppingCart.png" alt="Submit" height="40"/>
 		<!--<a href="./cart.html" id="shoppingCartLink"><img
 			src="../img/ShoppingCart.png" height="40" alt="Mein Warenkorb"
 			title="Mein Warenkorb"></a>-->
@@ -64,8 +64,8 @@
 						Scampis</label>
 				</div>
 			</fieldset>
-			<a href="../pizzaconf.html" id="backLink" class="primaryButton">Weiter einkaufen</a>
-			<a href="./login.html" id="buyLink" class="primaryButton">Kaufen</a>
+			<a href="./site/pizzaconf.jsp" id="backLink" class="primaryButton">Weiter einkaufen</a>
+			<a href="./site/login.jsp" id="buyLink" class="primaryButton">Kaufen</a>
 		</div>
 	</div>
 </body>

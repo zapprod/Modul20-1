@@ -21,7 +21,7 @@
 		</nav>
 		<form action="controller" method="get">
 		<input type="hidden" name="command" value="shoppingcart" />
-		<input type="image" class="scbutton" src="./img/ShoppingCart.png" alt="Submit" height="40"/>
+		<input type="image" class="cartButton" src="./img/ShoppingCart.png" alt="Submit" height="40"/>
 		<!--<a href="./site/cart.html" id="shoppingCartLink"><img
 			src="./img/ShoppingCart.png" height="40" alt="Mein Warenkorb"
 			title="Mein Warenkorb"></a>-->
@@ -34,11 +34,11 @@
 		<div class="content">
 		<form action="controller" method="get">
 			<h3>Zum Konfigurator</h3>
-			<p>Mit unserem Konfigurator können Sie Ihre Pizza aus einer
+			<p>Mit unserem Konfigurator k&ouml;nnen Sie Ihre Pizza aus einer
 				Vielzahl von Zutaten zusammenstellen.</p>
 			<br />
 			<input type="hidden" name="command" value="configurator" />
-			<input type="image" class="configbutton" src="./img/pizzaconf.png" alt="Submit" height="100"/>
+			<input type="image" class="configButton" src="./img/pizzaconf.png" alt="Submit" height="100"/>
 			<!--<a href="./site/pizzaconf.html" id="pizzaConfLink"><img
 			src="./img/pizzaconf.png" height="100" alt="Konfigurator"
 			title="Konfigurator"></a>-->

@@ -10,17 +10,22 @@
 </head>
 <body>
 	<div id="containerContent">
-	<nav>
-		<a class="" href="../index.html"> <img src="../img/logo2.png" height="60" class="" alt=""><span></span> 
-		</a>
-	</nav>
-	<a href="./cart.html" id="shoppingCartLink"><img
+		<nav>
+			<a href="../index.jsp"> <img src="../img/logo2.png" height="60" class="" alt=""><span></span>
+			</a>
+		</nav>
+		<!-- <a href="./cart.html" id="shoppingCartLink"><img
 			src="../img/ShoppingCart.png" height="40" alt="Mein Warenkorb"
-			title="Mein Warenkorb"></a>
-<div class="jumbotron">
-  <h1>Bestellübersicht</h1>
-</div>
-<div class="content">
+			title="Mein Warenkorb"></a>-->
+		<form action="controller" method="get">
+			<input type="hidden" name="command" value="shoppingcart" /> <input
+				type="image" class="cartButton" src="../img/ShoppingCart.png"
+				alt="Submit" height="40" />
+		</form>
+		<div class="jumbotron">
+			<h1>Bestellübersicht</h1>
+		</div>
+		<div class="content">
 			<table id="orderTable">
 				<tbody>
 					<tr>
@@ -37,8 +42,10 @@
 					</tr>
 				</tbody>
 			</table>
-			<a href="./pizzaconf.html" id="backLink" class="primaryButton">Weiter einkaufen</a>
-			<a href="./checkout.html" id="buyLink2" class="primaryButton">Kaufen</a>	
+			<a href="./pizzaconf.html" id="backLink" class="primaryButton">Weiter
+				einkaufen</a> 
+				<a href="./checkout.html" id="buyLink2"
+				class="primaryButton">Kaufen</a>
 		</div>
 	</div>
 </body>

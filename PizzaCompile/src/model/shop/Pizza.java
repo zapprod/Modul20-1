@@ -14,7 +14,7 @@ public class Pizza implements Serializable
    private String verlag;
    private double preis;
    
-   private List<Autor> autoren = new ArrayList<Autor>();
+   private List<Pizza> pizzas = new ArrayList<Pizza>();
    
    public Pizza(int id, String titel, String verlag, double preis)
    {
@@ -25,15 +25,15 @@ public class Pizza implements Serializable
       this.preis = preis;
    }
    
-   public boolean addAutor(Autor autor)
+   public boolean addPizza(Pizza pizza)
    {
-      return this.autoren.add(autor);
+      return this.pizzas.add(pizza);
    }
    
-   public List<Autor> getAutoren()
+   public List<Pizza> getPizzas()
    {
-      List<Autor>  result = new ArrayList<Autor>();
-      result.addAll( this.autoren );
+      List<Pizza>  result = new ArrayList<Pizza>();
+      result.addAll( this.pizzas );
       return result;
    }
    
@@ -42,13 +42,13 @@ public class Pizza implements Serializable
       StringBuilder strBuild = new StringBuilder();
       
       int i = 0;
-      for( i =0; i < this.autoren.size()-1; i++ )
+      for( i =0; i < this.pizzas.size()-1; i++ )
       {
-         Autor autor = this.autoren.get(i);
-         strBuild.append( autor.getVorname() + " " + autor.getNachname() + ", ");
+         Pizza pizza = this.pizzas.get(i);
+         strBuild.append( pizza.getVorname() + " " + pizza.getNachname() + ", ");
       }
-      Autor autor = this.autoren.get(i);
-      strBuild.append( autor.getVorname() + " " + autor.getNachname() );
+      Pizza pizza = this.pizzas.get(i);
+      strBuild.append( pizza.getVorname() + " " + pizza.getNachname() );
          
       return strBuild.toString();
    }

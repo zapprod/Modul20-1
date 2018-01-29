@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=VT323"
 	rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="./css/style.css">
 <title>PizzaCompiler - Registrierung</title>
 </head>
 <body>
 	<div id="containerContent">
 		<nav>
-			<a class="" href="../index.html"> <img
-				src="../img/logo2.png" height="60" class="" alt="Home"><span></span>
+			<a class="" href="./index.jsp"> <img
+				src="./img/logo2.png" height="60" class="" alt="Home"><span></span>
 			</a>
 		</nav>
 		<div class="jumbotron">
@@ -55,8 +55,8 @@
 			</form>
 		</div>
 	</div>
-	<script type="text/javascript" src="../js/EmailValidation.js"></script>
-	<script type="text/javascript" src="../js/PasswordStrength.js"></script>
-	<script type="text/javascript" src="../js/AutoComplete.js"></script>
+	<script type="text/javascript" src="./js/EmailValidation.js"></script>
+	<script type="text/javascript" src="./js/PasswordStrength.js"></script>
+	<script type="text/javascript" src="./js/AutoComplete.js"></script>
 </body>
 </html>

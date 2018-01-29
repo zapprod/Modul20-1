@@ -11,18 +11,23 @@
 <body>
 	<div id="containerContent">
 		<nav>
-			<a class="" href="../index.html"> <img src="../img/logo2.png"
+			<a class="" href="../index.jsp"> <img src="../img/logo2.png"
 				height="60" class="" alt=""><span></span>
 			</a>
 		</nav>
-		<a href="./cart.html" id="shoppingCartLink"><img
+		<form action="controller" method="get">
+			<input type="hidden" name="command" value="shoppingcart" /> <input
+				type="image" class="cartButton" src="../img/ShoppingCart.png"
+				alt="Submit" height="40" />
+			<!--  <a href="./cart.html" id="shoppingCartLink"><img
 			src="../img/ShoppingCart.png" height="40" alt="Mein Warenkorb"
-			title="Mein Warenkorb"></a>
+			title="Mein Warenkorb"></a>-->
+		</form>
 		<div class="jumbotron">
 			<h1>Login</h1>
 		</div>
 		<div class="content">
-			<form method="POST" action="./orderinfo.html" class="loginForm">
+			<form method="POST" action="./orderinfo.jsp" class="loginForm">
 				<div>
 					<label for="InputUserID">Emailadresse</label> <input type="email"
 						id="InputUserID" aria-describedby="emailHelp"
@@ -32,7 +37,8 @@
 					<label for="InputPassword">Passwort</label> <input type="password"
 						id="InputPassword" placeholder="Passwort eingeben">
 					<div>
-						<button type="submit" id="sendDataButton" class="primaryButton">Daten senden</button>
+						<button type="submit" id="sendDataButton" class="primaryButton">Daten
+							senden</button>
 					</div>
 				</div>
 			</form>
@@ -42,11 +48,9 @@
 			<h1>Neuer Kunde</h1>
 		</div>
 		<div class="content">
-			<form method="POST" action="./register.html">
-				<label for="InputNeWUserID">Kundenregistrierung</label>
-				<div>
-					<button type="submit" class="primaryButton">Registrierung</button>
-				</div>
+			<form action="controller" method="get">
+				<input type="hidden" name="command" value="register" />
+				<input type="submit" class="primaryButton" value="Registrierung"/>
 			</form>
 		</div>
 	</div>

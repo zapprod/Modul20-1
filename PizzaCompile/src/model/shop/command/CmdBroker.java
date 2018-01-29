@@ -35,18 +35,15 @@ public class CmdBroker {
 	   
 	   private void init()
 	   {
-	      // Die Instanziierungsinformation (Web-Seiten-Graph) k�nnte man auch aus einer
-	      // Datei einlesen. Dadurch w�re dann der Broker v�llig generisch.
+
 	      this.addCommand( new StartCmd("start","/index.jsp", "configurator","shoppingcart") );
-	      this.addCommand( new ConfigCmd("configurator","/pizzaconf.jsp", "start", "orderinfo") );
-	      this.addCommand( new BuchdetailCommand("detail", "/buchdetail.jsp", "start", "warenkorb") );
-	      this.addCommand( new InCartCmd("shoppingcart", "/cart.jsp", "start", "login") );
-	      this.addCommand( new AnmeldungCommand("anmeldung", "/login.jsp", "registerdata", "login") );
-	      this.addCommand( new LoginCommand("login", "/kaufinformation.jsp","start", "danke") );
-	      this.addCommand( new GetRegisterDataCommand("registerdata", "/registrierung.jsp","register") );
-	      this.addCommand( new RegisterCmd("register", "/orderinfo.jsp","start", "checkout") );
-	      this.addCommand( new OrderInfoCmd("orderinfo", "/orderinfo.jsp","start", "checkout") );
-	      this.addCommand( new CheckoutCmd("danke","/danke.jsp","start") );
+	      this.addCommand( new ConfigCmd("configurator","/site/pizzaconf.jsp", "start", "shoppingcart") );
+	      this.addCommand( new InCartCmd("shoppingcart", "/site/cart.jsp", "start", "login", "register") );
+	      this.addCommand( new LoginCmd("login", "/site/login.jsp","shoppingcart", "register", "orderinfo") );
+	      /**this.addCommand( new GetRegisterDataCommand("registerdata", "/registrierung.jsp","register") );**/
+	      this.addCommand( new RegisterCmd("register", "/register.jsp","shoppingcart", "orderinfo") );
+	      this.addCommand( new OrderInfoCmd("orderinfo", "/site/orderinfo.jsp","start", "checkout") );
+	      this.addCommand( new CheckoutCmd("checkout","/site/checkout.jsp","start") );
 	   }
 	}
 
