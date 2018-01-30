@@ -12,7 +12,7 @@
 <body>
 	<div id="containerContent">
 		<nav>
-			<a class="" href="./index.jsp"> <img src="./img/logo2.png"
+			<a class="" href="./controller?command=start"> <img src="./img/logo2.png"
 				height="60" class="" alt="Home"><span></span>
 			</a>
 		</nav>
@@ -34,11 +34,7 @@
 				<input type="hidden" name="command" value="login"> <input
 					type="submit" class="primaryButton" value="Kaufen" />
 			</form>
-			<!-- <a href="../index.html" id="backLink">Weiter einkaufen</a>-->
-			<form action="controller" method="get">
-				<input type="hidden" name="command" value="configurator"> <input
-					type="submit" class="primaryButton" value="Weiter einkaufen">
-			</form>
+			<a href="./controller?command=configurator" id="backLink">Weiter einkaufen</a>
 		</div>
 	</div>
 </body>

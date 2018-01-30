@@ -9,7 +9,7 @@
 <body>
 	<div id="containerContent">
 	<nav>
-		<a class="" href="./index.html"> <img src="./img/logo2.png" height="60" class="" alt=""><span></span> 
+		<a class="" href="./controller?command=start"> <img src="./img/logo2.png" height="60" class="" alt=""><span></span> 
 		</a>
 	</nav>
 <div class="jumbotron">
@@ -17,7 +17,7 @@
 </div>
 <div class="content">
 <form method="POST" action="./index.html">
-  <button type="submit" id="backButton" class="primaryButton">Zurück zur Startseite</button>
+  <a href="./controller?command=start" id="backButton" class="primaryButton">Zurück zur Startseite</a>
 </form>
 </div>
 </div>

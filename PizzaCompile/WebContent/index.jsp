@@ -15,34 +15,26 @@
 <body>
 	<div id="containerContent">
 		<nav>
-			<a class="" href="./index.html"> <img src="./img/logo2.png"
+			<a href="./controller?command=start"> <img src="./img/logo2.png"
 				height="60" class="" alt=""><span></span>
 			</a>
 		</nav>
-		<form action="controller" method="get">
-		<input type="hidden" name="command" value="shoppingcart" />
-		<input type="image" class="cartButton" src="./img/ShoppingCart.png" alt="Submit" height="40"/>
-		<!--<a href="./site/cart.html" id="shoppingCartLink"><img
+		<a href="./controller?command=shoppingcart" id="shoppingCartLink" class="cartButton"><img
 			src="./img/ShoppingCart.png" height="40" alt="Mein Warenkorb"
-			title="Mein Warenkorb"></a>-->
-			</form>
+			title="Mein Warenkorb"></a>
 		<div class="jumbotron">
 			<h1>Willkommen beim PizzaCompiler</h1>
 			<!--  <p>Nutzen Sie unseren Konfigurator, um Ihre Wunschpizza
 				zusammenzustellen.</p> -->
 		</div>
 		<div class="content">
-		<form action="controller" method="get">
 			<h3>Zum Konfigurator</h3>
 			<p>Mit unserem Konfigurator k&ouml;nnen Sie Ihre Pizza aus einer
 				Vielzahl von Zutaten zusammenstellen.</p>
 			<br />
-			<input type="hidden" name="command" value="configurator" />
-			<input type="image" class="configButton" src="./img/pizzaconf.png" alt="Submit" height="100"/>
-			<!--<a href="./site/pizzaconf.html" id="pizzaConfLink"><img
+			<a href="./controller?command=configurator" id="pizzaConfLink"><img
 			src="./img/pizzaconf.png" height="100" alt="Konfigurator"
-			title="Konfigurator"></a>-->
-			</form>
+			title="Konfigurator"></a>
 		</div>
 	</div>
 </body>

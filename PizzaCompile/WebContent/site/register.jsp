@@ -11,7 +11,7 @@
 <body>
 	<div id="containerContent">
 		<nav>
-			<a class="" href="./index.jsp"> <img
+			<a class="" href="./controller?command=start"> <img
 				src="./img/logo2.png" height="60" class="" alt="Home"><span></span>
 			</a>
 		</nav>
@@ -19,7 +19,7 @@
 			<h1>Wir begrüßen Sie als Neukunden</h1>
 		</div>
 		<div class="content contentRegister">
-			<form method="POST" action="./orderinfo.html">
+			<form method="POST" action="./controller">
 				<div>
 					<label for="inputLastName">Nachname</label> <input type="text"
 						id="inputLastName" placeholder="Nachname">
@@ -48,7 +48,7 @@
 					<label for="inputPassword">Password</label> <input type="password"
 						id="inputPassword" placeholder="Password">
 				</div>
-
+				<input type="hidden" name="command" value="regjster">
 				<div>
 					<button type="submit" id="registerButton" class="primaryButton">Registrieren</button>
 				</div>

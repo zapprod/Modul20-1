@@ -12,17 +12,13 @@
 <body>
 	<div id="containerContent">
 		<nav>
-			<a class="" href="./index.jsp"> <img src="./img/logo2.png"
+			<a href="./controller?command=start"> <img src="./img/logo2.png"
 				height="60" class="" alt="Home"><span></span>
 			</a>
 		</nav>
-		<form action="controller" method="get">
-		<input type="hidden" name="command" value="shoppingcart" />
-		<input type="image" class="cartButton" src="./img/ShoppingCart.png" alt="Submit" height="40"/>
-		<!--<a href="./cart.html" id="shoppingCartLink"><img
-			src="../img/ShoppingCart.png" height="40" alt="Mein Warenkorb"
-			title="Mein Warenkorb"></a>-->
-		</form>	
+		<a href="./controller?command=shoppingcart" id="shoppingCartLink" class="cartButton"><img
+			src="./img/ShoppingCart.png" height="40" alt="Mein Warenkorb"
+			title="Mein Warenkorb"></a>
 		<div class="jumbotron">
 			<h1>Konfigurator</h1>
 		</div>
@@ -64,8 +60,8 @@
 						Scampis</label>
 				</div>
 			</fieldset>
-			<a href="./site/pizzaconf.jsp" id="backLink" class="primaryButton">Weiter einkaufen</a>
-			<a href="./site/login.jsp" id="buyLink" class="primaryButton">Kaufen</a>
+			<a href="./controller?command=shoppingcart" id="backLink" class="primaryButton">Weiter einkaufen</a>
+			<a href="./controller?command=login" id="buyLink" class="primaryButton">Kaufen</a>
 		</div>
 	</div>
 </body>
