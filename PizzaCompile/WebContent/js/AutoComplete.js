@@ -24,7 +24,7 @@ function cityCompletion(event)
      }
   };
   
-  var url = "../ort?plz=" + value;
+  var url = "./ort?plz=" + value;
   httpRequest.open("GET", url );
   httpRequest.send();
 }

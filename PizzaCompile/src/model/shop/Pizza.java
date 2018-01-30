@@ -10,9 +10,9 @@ public class Pizza implements Serializable
 {
    private static final long serialVersionUID = 6690657110776756579L;
    private int id;
-   private String titel;
-   private String verlag;
-   private double preis;
+   private String size;
+   private String topping;
+   private double cost;
    
    private List<Pizza> pizzas = new ArrayList<Pizza>();
    
@@ -20,9 +20,9 @@ public class Pizza implements Serializable
    {
       super();
       this.id = id;
-      this.titel = titel;
-      this.verlag = verlag;
-      this.preis = preis;
+      this.size = size;
+      this.topping = topping;
+      this.cost = cost;
    }
    
    public boolean addPizza(Pizza pizza)
@@ -37,7 +37,7 @@ public class Pizza implements Serializable
       return result;
    }
    
-   public String getAutorenAsString()
+   public String getToppingsAsString()
    {
       StringBuilder strBuild = new StringBuilder();
       
@@ -58,33 +58,33 @@ public class Pizza implements Serializable
       return this.id;
    }
    
-   public String getTitel()
+   public String getSize()
    {
-      return this.titel;
+      return this.size;
    }
    
-   public String getVerlag()
+   public String getTopping()
    {
-      return this.verlag;
+      return this.topping;
    }
    
-   public String getPreis()
+   public String getCost()
    {
       NumberFormat frmt = DecimalFormat.getInstance();
       frmt.setMinimumFractionDigits(2);
-      return frmt.format( this.preis );
+      return frmt.format( this.cost );
    }
 
    @Override
    public boolean equals(Object obj)
    {
-      if( obj instanceof Buch == false )
+      if( obj instanceof Pizza == false )
          return false;
       
       if( obj == this )
          return true;
       
-      if( ((Buch) obj).id == this.id )
+      if( ((Pizza) obj).id == this.id )
          return true;
       else
          return false;
@@ -99,15 +99,15 @@ public class Pizza implements Serializable
    @Override
    public String toString()
    {
-      StringBuilder autoren = new StringBuilder();
+      StringBuilder pizzas = new StringBuilder();
       int i=0;
-      for( i=0; i < this.autoren.size()-1; i++)
+      for( i=0; i < this.pizzas.size()-1; i++)
       {
-         autoren.append( this.autoren.get(i) + ", ");
+         pizzas.append( this.pizzas.get(i) + ", ");
       }
-      autoren.append( this.autoren.get(i) );
+      pizzas.append( this.pizzas.get(i) );
       
-      return autoren.toString() + " : " + this.titel + autoren.toString();
+      return pizzas.toString() + " : " + this.size + pizzas.toString();
    }
    
 }

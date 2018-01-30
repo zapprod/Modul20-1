@@ -12,10 +12,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-@Entity
+
 public class User
 {
-   @Id  @GeneratedValue(strategy=GenerationType.SEQUENCE)
+   
    private int id;
 
    private String name = null;
@@ -26,19 +26,19 @@ public class User
 
    private String userid = null;
    
-   @Column(name="password")
+   
    private byte[] pwdHash = new byte[0];
    private byte[] salt = new byte[0];
    
-   @OneToMany(mappedBy="user",cascade=CascadeType.PERSIST,fetch=FetchType.EAGER)
+   
    private List<Bestellung> bestellungen = null;
  
-   public Benutzer()
+   public User()
    {
       super();
    }
    
-   public Benutzer(String name, String vorname, String email, String plz, String ort)
+   public User(String name, String vorname, String email, String plz, String ort)
    {
       super();
       this.name = name;
@@ -164,7 +164,7 @@ public class User
          return false;
       if (getClass() != obj.getClass())
          return false;
-      Benutzer other = (Benutzer) obj;
+      User other = (User) obj;
       if (id != other.id)
          return false;
       return true;
