@@ -1,28 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=VT323"
-	rel="stylesheet">
-<link rel="stylesheet" href="./css/style.css">
+<%! 
+	String title = "Konfigurator";
+	String jumbHead = "Konfigurator";
+	String jumbClaim = "";
+%>
+<%@ include file="./partial/header.jsp" %>
 
-<title>PizzaCompiler - Konfigurator</title>
-</head>
-<body>
-	<div id="containerContent">
-		<nav>
-			<a href="./controller?command=start"> <img src="./img/logo2.png"
-				height="60" class="" alt="Home"><span></span>
-			</a>
-		</nav>
-		<a href="./controller?command=shoppingcart" id="shoppingCartLink" class="cartButton"><img
-			src="./img/ShoppingCart.png" height="40" alt="Mein Warenkorb"
-			title="Mein Warenkorb"></a>
-		<div class="jumbotron">
-			<h1>Konfigurator</h1>
-		</div>
-		<div class="content">
 			<fieldset class="checkboxgroup">
 				<p>Wählen Sie zuerst eine Pizzagröße</p>
 				<div class="clearfix">
@@ -62,7 +44,5 @@
 			</fieldset>
 			<a href="./controller?command=shoppingcart" id="backLink" class="primaryButton">Weiter einkaufen</a>
 			<a href="./controller?command=login" id="buyLink" class="primaryButton">Kaufen</a>
-		</div>
-	</div>
-</body>
-</html>
+<%@ include file="./partial/footer.jsp" %>
+			

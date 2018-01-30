@@ -1,24 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=VT323"
-	rel="stylesheet">
-<link rel="stylesheet" href="./css/style.css">
-<title>PizzaCompiler - Registrierung</title>
-</head>
-<body>
-	<div id="containerContent">
-		<nav>
-			<a class="" href="./controller?command=start"> <img
-				src="./img/logo2.png" height="60" class="" alt="Home"><span></span>
-			</a>
-		</nav>
-		<div class="jumbotron">
-			<h1>Wir begrüßen Sie als Neukunden</h1>
-		</div>
-		<div class="content contentRegister">
+<%! 
+	String title = "Registrierung";
+	String jumbHead = "Wir begrüßen Sie als Neukunden";
+	String jumbClaim = "";
+%>
+<%@ include file="./partial/header.jsp" %>
 			<form method="POST" action="./controller">
 				<div>
 					<label for="inputLastName">Nachname</label> <input type="text"
@@ -53,10 +38,5 @@
 					<button type="submit" id="registerButton" class="primaryButton">Registrieren</button>
 				</div>
 			</form>
-		</div>
-	</div>
-	<script type="text/javascript" src="./js/EmailValidation.js"></script>
-	<script type="text/javascript" src="./js/PasswordStrength.js"></script>
-	<script type="text/javascript" src="./js/AutoComplete.js"></script>
-</body>
-</html>
+<%@ include file="./partial/footer.jsp" %>
+			
