@@ -4,15 +4,14 @@
 	String jumbClaim = "";
 %>
 <%@ include file="./partial/header.jsp" %>
+
 	<form action="controller" method="post">
 		<table id="cartTable">
 			<tbody>
-				<c:forEach items="${warenkorb.inhalt}" var="b">
 					<tr>
 						<td>${b.autorenAsString}</td>
 						<td>${b.titel}</td>
 					</tr>
-				</c:forEach>
 			</tbody>
 		</table>
 		<input type="hidden" name="command" value="login"> <input

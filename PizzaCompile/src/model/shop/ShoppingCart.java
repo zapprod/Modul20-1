@@ -27,7 +27,7 @@ public class ShoppingCart implements Serializable{
 	      this.pizzas = new ArrayList<Pizza>();
 	   }
 	   
-	   public Collection<Pizza> getInhalt()
+	   public Collection<Pizza> getContents()
 	   {
 	      return new ArrayList<Pizza>(this.pizzas);
 	   }
