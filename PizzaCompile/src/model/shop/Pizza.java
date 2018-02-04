@@ -16,7 +16,7 @@ public class Pizza implements Serializable
    
    private List<Pizza> pizzas = new ArrayList<Pizza>();
    
-   public Pizza(int id, String titel, String verlag, double preis)
+   public Pizza(int id, String size, String topping, double cost)
    {
       super();
       this.id = id;
@@ -45,10 +45,10 @@ public class Pizza implements Serializable
       for( i =0; i < this.pizzas.size()-1; i++ )
       {
          Pizza pizza = this.pizzas.get(i);
-         strBuild.append( pizza.getVorname() + " " + pizza.getNachname() + ", ");
+         strBuild.append( pizza.getSize() + " " + pizza.getTopping() + ", ");
       }
       Pizza pizza = this.pizzas.get(i);
-      strBuild.append( pizza.getVorname() + " " + pizza.getNachname() );
+      strBuild.append( pizza.getSize() + " " + pizza.getTopping() );
          
       return strBuild.toString();
    }

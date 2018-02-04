@@ -40,7 +40,7 @@ public class CmdBroker {
 	      this.addCommand( new ConfigCmd("configurator","/site/pizzaconf.jsp", "start", "shoppingcart", "login") );
 	      this.addCommand( new InCartCmd("shoppingcart", "/site/cart.jsp", "start", "login", "register") );
 	      this.addCommand( new LoginCmd("login", "/site/login.jsp","shoppingcart", "register", "orderinfo") );
-	      this.addCommand( new GetRegisterDataCmd("regdata", "/site/register.jsp","register") );
+	      /*this.addCommand( new GetRegisterDataCmd("regdata", "/site/register.jsp","register") );*/
 	      this.addCommand( new RegisterCmd("register", "/site/register.jsp","shoppingcart", "orderinfo", "start") );
 	      this.addCommand( new OrderInfoCmd("orderinfo", "/site/orderinfo.jsp","start", "checkout") );
 	      this.addCommand( new CheckoutCmd("checkout","/site/checkout.jsp","start") );

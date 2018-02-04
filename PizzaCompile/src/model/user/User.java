@@ -3,16 +3,6 @@ package model.user;
 import java.awt.List;
 import java.util.ArrayList;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
-
 public class User
 {
    
@@ -31,7 +21,7 @@ public class User
    private byte[] salt = new byte[0];
    
    
-   private List<Bestellung> bestellungen = null;
+   private List<Order> orders = null;
  
    public User()
    {
@@ -46,7 +36,7 @@ public class User
       this.email = email;
       this.plz = plz;
       this.ort = ort;
-      this.bestellungen = new ArrayList<Bestellung>();
+      this.orders = new ArrayList<Order>();
    }
 
    public String getName()
@@ -135,14 +125,14 @@ public class User
       this.salt = salt;
    }
    
-   public void addBestellung(Bestellung bestellung)
+   public void addOrder(Order order)
    {
-      this.bestellungen.add( bestellung );
+      this.orders.add( order );
    }
    
-   public List<Bestellung> getBestellungen()
+   public List<Order> getOrders()
    {
-      return this.bestellungen;
+      return this.orders;
    }
 
 
